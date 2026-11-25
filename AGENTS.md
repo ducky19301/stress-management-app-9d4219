@@ -6,19 +6,20 @@ This document describes the project for developers and AI agents working on this
 
 **Softground** is a stress-support app for relationships, work and personal life. It has an always-free AI companion with selectable therapy approaches and Mirror mode, moderated peer circles, mostly free activities, and curated resources (books, affordable therapy, crisis lines).
 
-**Continue from [PLAN.md](PLAN.md).** Milestone 1 (the full UI surface) is done. Every screen reads sample data from `src/lib/fixtures.ts`, so later milestones swap those exports for real data (Netlify Identity, Netlify Database, AI Gateway) without redesigning the screens.
+**Continue from [PLAN.md](PLAN.md).** Milestone 1 (the full UI surface) is done, and the client-side parts of milestones 2, 3, 4, 5, 6 and 7 are done too: a local profile (name, handle, focus areas, time zone) in `src/lib/store.ts`, persisted mood check-ins and journal entries, locally saved circle posts, expanded canned companion replies, activity timers with completion tracking, night mode and a PWA manifest. Everything personal lives in this browser's localStorage until the server milestones land. Every screen still reads its sample content from `src/lib/fixtures.ts`, so later milestones swap those exports for real data (Netlify Identity, Netlify Database, AI Gateway) without redesigning the screens.
 
 ### Screens
 
-| Route         | File                         | Purpose                                                   |
-| ------------- | ---------------------------- | --------------------------------------------------------- |
-| `/`           | `src/routes/index.tsx`       | Marketing landing page                                    |
-| `/login`      | `src/routes/login.tsx`       | Sign-up/log-in and focus-area onboarding (not wired yet)  |
-| `/today`      | `src/routes/today.tsx`       | Dashboard: mood check-in, breathing, journal, week strip  |
-| `/companion`  | `src/routes/companion.tsx`   | AI companion chat and customization (canned replies)      |
-| `/circles`    | `src/routes/circles.tsx`     | Peer circles (`?c=<circleId>` opens a room) and buddies   |
-| `/activities` | `src/routes/activities.tsx`  | Filterable activities and detail dialog                   |
-| `/resources`  | `src/routes/resources.tsx`   | Therapy, books, crisis lines                              |
+| Route         | File                        | Purpose                                                                                |
+| ------------- | --------------------------- | -------------------------------------------------------------------------------------- |
+| `/`           | `src/routes/index.tsx`      | Marketing landing page                                                                 |
+| `/login`      | `src/routes/login.tsx`      | Sign-up/log-in and focus-area onboarding (not wired yet)                               |
+| `/today`      | `src/routes/today.tsx`      | Dashboard: mood check-in, breathing, journal, week strip                               |
+| `/companion`  | `src/routes/companion.tsx`  | AI companion chat and customization (canned replies)                                   |
+| `/circles`    | `src/routes/circles.tsx`    | Peer circles (`?c=<circleId>` opens a room) and buddies                                |
+| `/activities` | `src/routes/activities.tsx` | Filterable activities and detail dialog with start-now timer and completion tracking   |
+| `/resources`  | `src/routes/resources.tsx`  | Therapy, books, crisis lines                                                           |
+| `/settings`   | `src/routes/settings.tsx`   | Edit profile (name, handle, focus areas, time zone), night mode, export/delete my data |
 
 Shared pieces are in `src/components/site/`: `AppShell` (sidebar on desktop, bottom tab bar on mobile, plus `PageHeader`), `CrisisButton` (a crisis-line sheet that must stay on every screen), `BreathingOrb`, `Avatar` (gradient avatars, so peer spaces never use photos), `KindGlyph` and `Logo`.
 

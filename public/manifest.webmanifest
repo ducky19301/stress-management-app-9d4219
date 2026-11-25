@@ -1,0 +1,26 @@
+{
+  "background_color": "#f6f4ec",
+  "description": "A softer place to land when love, work or life gets heavy. Peer circles, free activities, books, therapy options and an always-free AI companion.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "/icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "/icon-512.png",
+      "type": "image/png"
+    },
+    { "sizes": "48x48 32x32", "src": "/favicon.ico", "type": "image/x-icon" }
+  ],
+  "name": "Softground",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Softground",
+  "start_url": "/",
+  "theme_color": "#4d6f57"
+}

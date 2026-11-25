@@ -1,0 +1,6 @@
+node_modules
+dist
+.netlify
+.tanstack
+.env
+src/routeTree.gen.ts

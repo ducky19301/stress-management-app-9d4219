@@ -22,4 +22,6 @@ netlify dev        # or: pnpm dev
 
 ## Status
 
-The full product surface is clickable: the landing page, sign-up, Today, Companion, Circles, Activities and Resources. These screens use sample data from `src/lib/fixtures.ts`. Accounts, saved data, live chat and the real AI companion are planned in [PLAN.md](PLAN.md).
+The full product surface is clickable: the landing page, sign-up, Today, Companion, Circles, Activities, Resources and Settings. These screens use sample content from `src/lib/fixtures.ts`, plus a local-first layer in `src/lib/store.ts`: your profile, mood check-ins, journal entries, completed activities, circle posts and night-mode preference are stored in this browser's localStorage — nothing leaves the device.
+
+Also done, client-side: activity timers with completion tracking, an installable PWA manifest, and night mode. Still genuinely needing backend services (see [PLAN.md](PLAN.md)): Netlify Identity for real accounts and Google sign-in, Netlify Database for synced data and live circles, and the AI Gateway for a real companion. The companion's replies are canned, circle posts are local-only, and the therapist search shows clearly-labelled sample listings.
